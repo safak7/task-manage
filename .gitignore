@@ -15,3 +15,9 @@ composer.lock
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+###> docker ###
+.docker_data
+docker-compose.yml
+/docker
+###< docker ###
