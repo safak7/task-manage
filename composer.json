@@ -28,7 +28,9 @@
         "symfony/validator": "*",
         "symfony/web-link": "*",
         "symfony/yaml": "*",
-        "cocur/slugify": "^3.1"
+        "cocur/slugify": "^3.1",
+        "guzzlehttp/guzzle": "^6.3",
+        "ext-json": "*"
     },
     "require-dev": {
         "symfony/debug-pack": "*",

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Command;
 
 use Psr\Container\ContainerInterface;
@@ -8,6 +7,9 @@ use Symfony\Component\Console\Command\Command;
 
 abstract class AbstractCommand extends Command
 {
+    /** @var string */
+    public const ADAPTERS_NAMESPACE = 'App\Adapter';
+
     /** @var ContainerInterface $container */
     protected $container;
 
