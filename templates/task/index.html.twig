@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'taskManage'|trans }}{% endblock %}
+{% block body %}
+    <div class="task-wrapper">
+        <div class="container">
+            <h1 class="page-title">
+                {{ 'taskManage'|trans }}
+            </h1>
+            <h6 class="page-title">
+                {{ 'estimateTime'|trans }}: {{ estimateTime }} {{ 'week'|trans }}
+            </h6>
+            {% for list in lists %}
+                <div class="item">
+                    <h2 class="week-title">{{ 'week'|trans }} {{ loop.index }}</h2>
+                    {% for row in list %}
+                        <ul>
+                            <h4 class="developer-title">
+                                {{ row.developer.name }}
+                                <span>({{ 'level'|trans }}: {{ row.developer.level }})</span>
+                            </h4>
+                            {% for task in row.tasks %}
+                                <li data-task-id="{{ task.id }}" data-provider-id="{{ task.pid }}">
+                                    <div class="task-title">{{ task.title }}</div>
+                                    <div class="task-level">{{ 'level'|trans }}: {{ task.level }}</div>
+                                    <div class="task-duration">{{ 'duration'|trans }}: {{ task.duration }}</div>
+                                    <div class="task-provider">{{ 'providerName'|trans }}: {{ task.pname }}</div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

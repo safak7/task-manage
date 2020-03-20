@@ -1,0 +1,43 @@
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px) {
+  .task-wrapper {
+    .item {
+      margin-bottom: 0;
+
+      ul {
+        width: 100%;
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .task-wrapper {
+    .item {
+      margin-bottom: 0;
+
+      ul {
+        width: 100%;
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .task-wrapper {
+    .item {
+      margin-bottom: 0;
+
+      ul {
+        width: 100%;
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+}
+
+
+
+
+
