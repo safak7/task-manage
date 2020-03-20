@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  -webkit-appearance: none;
+  color: #626262;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  float: left;
+  background: #dddddd;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.task-wrapper {
+  width: 100%;
+  float: left;
+}
+
+.task-wrapper .page-title {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+.task-wrapper .item {
+  width: 100%;
+  float: left;
+  margin-bottom: 30px;
+  border-top: 1px solid #626262;
+}
+
+.task-wrapper .item .week-title {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+.task-wrapper .item ul {
+  float: left;
+  margin: 0 15px;
+  background: #f1f1f1;
+}
+
+.task-wrapper .item ul .developer-title {
+  margin: 0;
+  padding: 15px;
+}
+
+.task-wrapper .item ul .developer-title span {
+  font-size: 12px;
+}
+
+.task-wrapper .item ul li {
+  padding: 15px;
+  border-bottom: 1px solid #626262;
+  transition: all 0.3s ease;
+}
+
+.task-wrapper .item ul li * {
+  transition: all 0.3s;
+}
+
+.task-wrapper .item ul li:hover {
+  background: #626262;
+  border-color: #626262;
+}
+
+.task-wrapper .item ul li:hover * {
+  color: #ffffff;
+}
+
+.task-wrapper .item ul li:last-child {
+  border-bottom: none;
+}
+
+/*# sourceMappingURL=style.css.map */

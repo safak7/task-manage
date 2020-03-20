@@ -19,32 +19,32 @@ class TaskRepository extends ServiceEntityRepository
         parent::__construct($registry, Task::class);
     }
 
-    // /**
-    //  * @return Task[] Returns an array of Task objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return mixed[]
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function findAllTaskWithProvider()
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $sql = 'SELECT t.id, t.title, t.level, t.duration, p.id AS pid, p.name AS pname
+                FROM task t LEFT JOIN provider p ON p.id = t.provider_id';
+        $gtm = $conn->prepare($sql);
+        $gtm->execute();
+        return $gtm->fetchAll();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Task
+    /**
+     * @return mixed
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function getTotalTime()
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $sql = 'SELECT sum(duration*level) AS total_time FROM task';
+        $gtm = $conn->prepare($sql);
+        $gtm->execute();
+        return $gtm->fetch();
     }
-    */
 }
